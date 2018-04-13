@@ -225,7 +225,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     private void showRationaleDialog(String desc, final String[] permissions, final int requestCode) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(getString(R.string.tips))
+        AlertDialog dialog = builder.setTitle(getString(R.string.tips))
                 .setMessage(desc)
                 .setPositiveButton(getResources().getString(R.string.confrim), new DialogInterface.OnClickListener() {
                     @Override
@@ -241,6 +241,12 @@ public abstract class BaseActivity extends AppCompatActivity {
                 })
                 .setCancelable(false)
                 .show();
+        //修改 AlertDialog 中按钮颜色的方法 - CSDN博客
+        //           https://blog.csdn.net/zackratos/article/details/55517933
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(this, R.color.dialog_button_bg));
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(this, R.color.dialog_button_bg));
+        //禁止点击 dialog 外部取消弹窗
+        dialog.setCanceledOnTouchOutside(false);
     }
 
 
