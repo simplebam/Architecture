@@ -10,6 +10,7 @@ Android MVC架构学习Demo
 ### 项目截图
 <a href="../art/main.png"><img src="../art/main.png" width="40%"/></a><img height="0" width="8px"/><a href="../art/setting.png"><img src="../art/setting.png" width="40%"/></a>
 
+App体验地址:[app-debug.apk](https://github.com/simplebam/MVCArchitecture/releases/download/v1.0/app-debug.apk)
 
 ### 项目中用到的知识
 * Android开发的框架:[死磕 Fragment 的生命周期 - MeloDev的博客 - CSDN博客](http://blog.csdn.net/MeloDev/article/details/53406019)
@@ -37,4 +38,10 @@ Android MVC架构学习Demo
   TitleState.SHOW_WHEN_ACTIVE(默认状态):当选中时候才显示标题,不选中不显示
   TitleState.ALWAYS_SHOW:无论选中不选中都显示标题
   TitleState.ALWAYS_HIDE:无论选中不选中都不可以标题
+  ```
+* 在开发找了很久debug.apk包都没有找到,最终使用everything搜索软件搜索出来,发现
+  路径又跟3.0版本不同了(目前AS 3.1,gradle 4.4),路径为
+  ```
+  E:\acode\Android_Studio\MVC\app\build\intermediates\instant-run-apk\
+  debug\app-debug.apk
   ```

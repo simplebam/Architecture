@@ -10,7 +10,7 @@ Android MVC架构学习Demo
 ### 项目截图
 <a href="./art/main.png"><img src="./art/main.png" width="40%"/></a><img height="0" width="8px"/><a href="./art/setting.png"><img src="./art/setting.png" width="40%"/></a>
 
-
+App体验地址:[app-debug.apk](https://github.com/simplebam/MVCArchitecture/releases/download/v1.0/app-debug.apk)
 
 
 ## 推荐项目
