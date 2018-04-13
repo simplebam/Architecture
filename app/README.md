@@ -33,6 +33,8 @@ Android MVC架构学习Demo
 * 在使用 ahbottomnavigation 时候,原项目使用该开源库的版本有点低,我把它升级到
   目前最新版 bottomNavigation.setTitleState(替代了原来的
   bottomNavigation.setForceTitlesDisplay) 里面有三种状态:
-  * TitleState.SHOW_WHEN_ACTIVE(默认状态):当选中时候才显示标题,不选中不显示
-  * TitleState.ALWAYS_SHOW:无论选中不选中都显示标题
-  * TitleState.ALWAYS_HIDE:无论选中不选中都不可以标题
+  ```
+  TitleState.SHOW_WHEN_ACTIVE(默认状态):当选中时候才显示标题,不选中不显示
+  TitleState.ALWAYS_SHOW:无论选中不选中都显示标题
+  TitleState.ALWAYS_HIDE:无论选中不选中都不可以标题
+  ```
