@@ -4,7 +4,10 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+
+import com.yueyue.mvc.R;
 
 /**
  * author : yueyue on 2018/4/13 13:46
@@ -50,9 +53,10 @@ public class CommonDialog extends BaseDialogFragment {
         String negative = arguments.getString(NEGATIVE);
         boolean cancelable = arguments.getBoolean(CANCELABLE);
 
-        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-        builder.setTitle(title)
+        final AlertDialog.Builder builder = new AlertDialog.Builder(getActivity())
+                .setTitle(title)
                 .setMessage(message)
+                .setCancelable(cancelable)
                 .setPositiveButton(positive, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
@@ -69,9 +73,16 @@ public class CommonDialog extends BaseDialogFragment {
                         }
                     }
                 });
-        setCancelable(cancelable);
-        builder.create().setCanceledOnTouchOutside(false);
-        return builder.create();
+
+
+        AlertDialog dialog = builder.show();
+        //修改 AlertDialog 中按钮颜色的方法 - CSDN博客
+        //           https://blog.csdn.net/zackratos/article/details/55517933
+        dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(ContextCompat.getColor(getActivity(), R.color.dialog_button_bg));
+        dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(ContextCompat.getColor(getActivity(), R.color.dialog_button_bg));
+        //禁止点击 dialog 外部取消弹窗
+        dialog.setCanceledOnTouchOutside(false);
+        return dialog;
     }
 
 }
